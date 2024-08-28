@@ -18,7 +18,7 @@ public class ChessBoardGizmos : MonoBehaviour
         var startPosition = transform.position;
 
         // How far off the board to draw the lines
-        const int overFlowAmount = 2;
+        const int overFlowAmount = 0;
 
         // Draw the lines for the chess board
         for (var i = -chessBoardSize / 2; i <= chessBoardSize / 2; i++)
