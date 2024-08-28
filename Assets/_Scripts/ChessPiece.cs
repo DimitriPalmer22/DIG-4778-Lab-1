@@ -36,7 +36,7 @@ public class ChessPiece : MonoBehaviour
     {
         // Spawn a pawn if the piece is null
         if (_piece == null)
-            InstantiatePiece(PieceType.Pawn);
+            InstantiatePiece(pieceType);
     }
 
     // Update is called once per frame

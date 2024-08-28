@@ -44,3 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 457777d8aaebf76b19d171ed6ce5d5aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
+  pieceType: 0
+  pawnn: {fileID: 562779731797323274, guid: 16bf644a700b956b382c0b939a00bb80, type: 3}
+  rook: {fileID: 6456978279463394347, guid: 97d6d24a5af9333aa9835db065edbcde, type: 3}
+  knight: {fileID: 3385286697947438640, guid: f6d1aff3ce75528ba82b2a204ec48495, type: 3}
+  bishop: {fileID: 5257982683261743508, guid: 71b348f25fe1caff58fab3631a18e064, type: 3}
+  queen: {fileID: 8912564154463491692, guid: 20f6014f23261c0f6a66ba9fb3923fa6, type: 3}
+  king: {fileID: 7663824148061334081, guid: 5041abbcd23603518a6036f89d8cadca, type: 3}
