@@ -49,6 +49,7 @@ public class ChessPiece : MonoBehaviour
             InstantiatePiece(pieceType);
         }
         
+        ApplyColor();
     }
 
     private void InstantiatePiece(PieceType pieceType)
@@ -74,5 +75,20 @@ public class ChessPiece : MonoBehaviour
                 _piece = Instantiate(king, transform);
                 break;
         }
+    }
+
+    private void ApplyColor()
+    {
+        if (_piece == null)
+            return;
+        
+        // Get the sprite renderer of the piece
+        var spriteRenderer = _piece.GetComponent<SpriteRenderer>();
+        
+        if (spriteRenderer == null)
+            return;
+        
+        // Set the color of the piece
+        spriteRenderer.color = color;
     }
 }
