@@ -35,10 +35,10 @@ public class ChessBoardGizmos : MonoBehaviour
         // Draw the lines for the chess board
         for (var i = -chessBoardSize / 2; i <= chessBoardSize / 2; i++)
         {
-            var drawX = startPosition.x + i * cellSize;
-            var drawY = startPosition.y - (chessBoardSize + overFlowAmount) / 2 * cellSize;
+            var drawX = startPosition.x - (chessBoardSize + overFlowAmount) / 2 * cellSize;
+            var drawY = startPosition.y - i * cellSize;
 
-            var fromVector = new Vector2(drawY, drawX);
+            var fromVector = new Vector2(drawX, drawY);
             var toVector = fromVector + new Vector2(cellSize * chessBoardSize + overFlowAmount, 0);
 
             Gizmos.DrawLine(fromVector, toVector);

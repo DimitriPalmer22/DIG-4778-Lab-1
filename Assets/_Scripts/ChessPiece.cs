@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [ExecuteAlways]
+[RequireComponent(typeof(SpriteRenderer))]
 public class ChessPiece : MonoBehaviour
 {
     public enum PieceType
@@ -17,78 +18,74 @@ public class ChessPiece : MonoBehaviour
         King
     }
 
-    [SerializeField] private Color color;
-    
     [SerializeField] private PieceType pieceType;
+    [SerializeField] private Color color;
 
-    [Header("Piece Types")]
-    [SerializeField] private GameObject pawnn;
-    [SerializeField] private GameObject rook;
-    [SerializeField] private GameObject knight;
-    [SerializeField] private GameObject bishop;
-    [SerializeField] private GameObject queen;
-    [SerializeField] private GameObject king;
+    [Header("Sprite List")]
+    [SerializeField] private Sprite pawnSprite;
+    [SerializeField] private Sprite rookSprite;
+    [SerializeField] private Sprite knightSprite;
+    [SerializeField] private Sprite bishopSprite;
+    [SerializeField] private Sprite queenSprite;
+    [SerializeField] private Sprite kingSprite;
 
-    private GameObject _piece;
+    private SpriteRenderer _spriteRenderer;
     
     // Start is called before the first frame update
     void Start()
     {
-        // Spawn a pawn if the piece is null
-        if (_piece == null)
-            InstantiatePiece(pieceType);
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Check if the correct piece is instantiated
-        if (_piece != null && _piece.tag != pieceType.ToString())
-        {
-            DestroyImmediate(_piece);
-            InstantiatePiece(pieceType);
-        }
-        
-        ApplyColor();
-    }
+        // Check if the sprite renderer is null
+        if (_spriteRenderer == null)
+            _spriteRenderer = GetComponent<SpriteRenderer>();
 
-    private void InstantiatePiece(PieceType pieceType)
-    {
-        switch (pieceType)
-        {
-            case PieceType.Pawn:
-                _piece = Instantiate(pawnn, transform);
-                break;
-            case PieceType.Rook:
-                _piece = Instantiate(rook, transform);
-                break;
-            case PieceType.Knight:
-                _piece = Instantiate(knight, transform);
-                break;
-            case PieceType.Bishop:
-                _piece = Instantiate(bishop, transform);
-                break;
-            case PieceType.Queen:
-                _piece = Instantiate(queen, transform);
-                break;
-            case PieceType.King:
-                _piece = Instantiate(king, transform);
-                break;
-        }
+        ApplySprite();
+        ApplyColor();
     }
 
     private void ApplyColor()
     {
-        if (_piece == null)
-            return;
-        
-        // Get the sprite renderer of the piece
-        var spriteRenderer = _piece.GetComponent<SpriteRenderer>();
-        
-        if (spriteRenderer == null)
-            return;
-        
         // Set the color of the piece
-        spriteRenderer.color = color;
+        _spriteRenderer.color = color;
+    }
+
+    private void ApplySprite()
+    {
+        
+        // Set the sprite of the piece
+        switch (pieceType)
+        {
+            case PieceType.Pawn:
+                _spriteRenderer.sprite = pawnSprite;
+                break;
+         
+            case PieceType.Rook:
+                _spriteRenderer.sprite = rookSprite;
+                break;
+            
+            case PieceType.Knight:
+                _spriteRenderer.sprite = knightSprite;
+                break;
+            
+            case PieceType.Bishop:
+                _spriteRenderer.sprite = bishopSprite;
+                break;
+            
+            case PieceType.Queen:
+                _spriteRenderer.sprite = queenSprite;
+                break;
+            
+            case PieceType.King:
+                _spriteRenderer.sprite = kingSprite;
+                break;
+            
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
     }
 }
