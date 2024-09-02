@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6251017516010168292}
   - component: {fileID: 1051484643082579847}
   - component: {fileID: -2903703344826510527}
+  - component: {fileID: 1386849614315721914}
   m_Layer: 0
   m_Name: King
   m_TagString: King
@@ -97,3 +98,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b11d6d7ef4a24724cbf3251682db85a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1386849614315721914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7663824148061334081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9b2fe6828eacd49bd17ce4d0ff32d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circleRadius: 1

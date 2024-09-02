@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2814699003703927008}
   - component: {fileID: 5004006060737813413}
   - component: {fileID: -3756586133983954438}
+  - component: {fileID: 8147762829919327318}
+  - component: {fileID: -7485206222875061304}
   m_Layer: 0
   m_Name: Pawn
   m_TagString: Pawn
@@ -95,5 +97,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11705781af8fdfe49acf7125129853f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8147762829919327318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562779731797323274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9b2fe6828eacd49bd17ce4d0ff32d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circleRadius: 1
+--- !u!114 &-7485206222875061304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562779731797323274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0dcb670c4db670489e1d5aaf18daa85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
